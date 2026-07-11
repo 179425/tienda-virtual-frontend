@@ -87,12 +87,20 @@ export function CarritoCliente() {
                 <span className="w-8 text-center font-mono text-sm">{cantidad}</span>
                 <button
                   aria-label="Aumentar cantidad"
-                  onClick={() => actualizarCantidad(producto.id, cantidad + 1)}
-                  className="px-3 py-1 font-body text-base text-forest hover:text-clay"
+                  onClick={() =>
+                    actualizarCantidad(producto.id, Math.min(producto.stock, cantidad + 1))
+                  }
+                  disabled={cantidad >= producto.stock}
+                  className="px-3 py-1 font-body text-base text-forest hover:text-clay disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:text-forest"
                 >
                   +
                 </button>
               </div>
+              {cantidad >= producto.stock && (
+                <p className="mt-1 font-mono text-[11px] text-ink/40">
+                  Máximo disponible: {producto.stock}
+                </p>
+              )}
             </div>
           </li>
         ))}
