@@ -5,17 +5,44 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCarritoStore } from "./store";
 import { formatearPrecio } from "@/features/catalogo/data";
-import { EnlaceBoton } from "@/components/ui/Boton";
+import { Boton } from "@/components/ui/Boton";
 import { construirEnlaceWhatsApp } from "@/features/checkout/whatsapp";
+import { crearPedido } from "@/features/checkout/pedidos";
 
 export function CarritoCliente() {
   const [montado, setMontado] = useState(false);
+  const [enviando, setEnviando] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const items = useCarritoStore((s) => s.items);
   const actualizarCantidad = useCarritoStore((s) => s.actualizarCantidad);
   const quitar = useCarritoStore((s) => s.quitar);
+  const vaciar = useCarritoStore((s) => s.vaciar);
   const totalPrecio = useCarritoStore((s) => s.totalPrecio());
 
   useEffect(() => setMontado(true), []);
+
+  // Primero registra el pedido en Supabase (para que llegue automáticamente
+  // al POS de facturación) y solo después abre WhatsApp para la confirmación
+  // con el cliente. Si Supabase falla, igual deja seguir por WhatsApp para
+  // no bloquear la venta, pero avisa del error.
+  async function manejarConfirmarPedido() {
+    setEnviando(true);
+    setError(null);
+
+    const resultado = await crearPedido(items);
+
+    if (resultado.ok) {
+      window.open(construirEnlaceWhatsApp(items, resultado.numeroPedido), "_blank", "noopener,noreferrer");
+      vaciar();
+    } else {
+      setError(
+        "No pudimos registrar el pedido automáticamente, pero puedes continuar por WhatsApp."
+      );
+      window.open(construirEnlaceWhatsApp(items), "_blank", "noopener,noreferrer");
+    }
+
+    setEnviando(false);
+  }
 
   if (!montado) return null;
 
@@ -117,15 +144,17 @@ export function CarritoCliente() {
         <p className="mt-2 font-body text-xs text-moss50/60">
           El pago se coordina directamente por WhatsApp.
         </p>
-        <EnlaceBoton
-          href={construirEnlaceWhatsApp(items)}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Boton
+          onClick={manejarConfirmarPedido}
+          disabled={enviando}
           variante="secundario"
           className="mt-6 w-full"
         >
-          Confirmar pedido por WhatsApp
-        </EnlaceBoton>
+          {enviando ? "Enviando..." : "Confirmar pedido por WhatsApp"}
+        </Boton>
+        {error && (
+          <p className="mt-3 font-body text-xs text-clay">{error}</p>
+        )}
       </aside>
     </div>
   );
