@@ -37,6 +37,7 @@ export async function crearPedido(items: ItemCarrito[]): Promise<ResultadoPedido
   const { error } = await supabase.from("pending_orders").insert({
     order_number: numeroPedido,
     items: filasItems,
+    subtotal: total,
     total,
     status: "pending",
   });
