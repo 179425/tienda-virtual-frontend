@@ -35,7 +35,7 @@ export function CatalogoCliente({
             type="search"
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}
-            placeholder="Buscar plantas, macetas..."
+            placeholder="Buscar productos..."
             aria-label="Buscar productos"
             className="w-full rounded-full border border-moss/40 bg-white/70 px-5 py-3 font-body text-sm text-ink placeholder:text-ink/40 focus:border-gold"
           />
