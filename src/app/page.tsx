@@ -14,14 +14,13 @@ export default async function Home() {
       <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-12 md:grid-cols-2 md:items-center md:pt-20">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-moss">
-            Vivero de interior
+            
           </p>
           <h1 className="mt-4 font-display text-5xl leading-[1.05] text-forest md:text-6xl">
-            Plantas que se quedan a vivir contigo.
+            .
           </h1>
           <p className="mt-6 max-w-md font-body text-base leading-relaxed text-ink/70">
-            Seleccionamos cada planta y cada maceta a mano. Arma tu pedido, escríbenos
-            por WhatsApp y coordinamos la entrega — sin vueltas.
+            
           </p>
           <a
             href="#catalogo"
@@ -64,13 +63,13 @@ export default async function Home() {
             <div>
               <p className="font-mono text-xs uppercase tracking-wider text-moss">Luz</p>
               <p className="mt-1 font-body text-sm text-ink/70">
-                La mayoría prefiere luz indirecta, lejos del sol directo del mediodía.
+                
               </p>
             </div>
             <div>
               <p className="font-mono text-xs uppercase tracking-wider text-moss">Riego</p>
               <p className="mt-1 font-body text-sm text-ink/70">
-                Revisa la tierra antes de regar: mejor de menos que de más.
+                
               </p>
             </div>
             <div>
