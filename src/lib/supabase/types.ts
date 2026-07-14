@@ -8,7 +8,6 @@ export type Producto = {
   precio: number;
   categoria: string;
   imagen: string;
-  cuidado?: string;
   stock: number;
 };
 
