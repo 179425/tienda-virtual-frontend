@@ -14,13 +14,15 @@ export default async function Home() {
       <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-12 md:grid-cols-2 md:items-center md:pt-20">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-moss">
-            
+            Aseo · Mercado · Mascotas
           </p>
           <h1 className="mt-4 font-display text-5xl leading-[1.05] text-forest md:text-6xl">
-            .
+            Todo lo de la casa, a un mensaje de distancia.
           </h1>
           <p className="mt-6 max-w-md font-body text-base leading-relaxed text-ink/70">
-            
+            Aseo del hogar, cuidado personal, alimentos, bebidas, mecatos y productos
+            para mascotas. Arma tu pedido, escríbenos por WhatsApp y coordinamos la
+            entrega — sin vueltas.
           </p>
           <a
             href="#catalogo"
@@ -58,18 +60,18 @@ export default async function Home() {
 
       <section id="nosotros" className="mx-auto max-w-6xl px-5 pb-20">
         <div className="rounded-2xl bg-moss50 p-8 md:p-12">
-          <h2 className="font-display text-2xl text-forest">Cuidados básicos</h2>
+          <h2 className="font-display text-2xl text-forest">¿Por qué comprar en SeArys?</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
             <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-moss">Luz</p>
+              <p className="font-mono text-xs uppercase tracking-wider text-moss">Precios</p>
               <p className="mt-1 font-body text-sm text-ink/70">
-                
+                Precios de barrio, claros y sin sorpresas al momento de pagar.
               </p>
             </div>
             <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-moss">Riego</p>
+              <p className="font-mono text-xs uppercase tracking-wider text-moss">Variedad</p>
               <p className="mt-1 font-body text-sm text-ink/70">
-                
+                Aseo, alimentos, bebidas, mecatos y mascotas en un solo pedido.
               </p>
             </div>
             <div>
