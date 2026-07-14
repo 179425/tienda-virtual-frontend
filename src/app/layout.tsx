@@ -23,9 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Verdum — Plantas de interior y macetas artesanales",
+  title: "SeArys — Aseo, mercado y mascotas",
   description:
-    "Tienda de plantas de interior y macetas artesanales. Arma tu carrito y confirma tu pedido por WhatsApp.",
+    "Aseo del hogar, cuidado personal, alimentos, bebidas, mecatos y productos para mascotas. Arma tu carrito y confirma tu pedido por WhatsApp.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
