@@ -51,7 +51,7 @@ export function CarritoCliente() {
       <div className="rounded-2xl border border-dashed border-moss/40 py-20 text-center">
         <p className="font-display text-2xl text-forest">Tu carrito está vacío</p>
         <p className="mt-2 font-body text-sm text-ink/60">
-          Explora el catálogo y agrega tus plantas favoritas.
+          Explora el catálogo y agrega lo que necesitas.
         </p>
         <Link
           href="/"
