@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const producto = await getProductoPorSlug(params.slug);
   if (!producto) return {};
   return {
-    title: `${producto.nombre} — Verdum`,
+    title: `${producto.nombre} — SeArys`,
     description: producto.descripcion_corta,
   };
 }
