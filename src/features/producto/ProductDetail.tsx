@@ -49,15 +49,6 @@ export function ProductDetail({ producto }: { producto: Producto }) {
           {producto.descripcion}
         </p>
 
-        {producto.cuidado && (
-          <div className="mt-6 rounded-xl bg-moss50 p-4">
-            <p className="font-mono text-[11px] uppercase tracking-wider text-moss">
-              Cuidados
-            </p>
-            <p className="mt-1 font-body text-sm text-ink/80">{producto.cuidado}</p>
-          </div>
-        )}
-
         <div className="mt-8 flex items-center gap-4">
           <div className="flex items-center rounded-full border border-moss/40">
             <button
