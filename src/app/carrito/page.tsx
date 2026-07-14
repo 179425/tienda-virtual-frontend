@@ -1,7 +1,7 @@
 import { CarritoCliente } from "@/features/carrito/CarritoCliente";
 
 export const metadata = {
-  title: "Tu carrito — Verdum",
+  title: "Tu carrito — SeArys",
 };
 
 export default function CarritoPage() {
