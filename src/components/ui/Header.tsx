@@ -24,7 +24,7 @@ export function Header() {
             Catálogo
           </Link>
           <Link href="/#nosotros" className="hover:text-clay transition-colors">
-            Cuidados
+            Domicilios
           </Link>
         </nav>
 
