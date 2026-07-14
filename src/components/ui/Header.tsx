@@ -16,7 +16,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-moss/30 bg-paper/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <Link href="/" className="font-display text-2xl font-medium tracking-tight text-forest">
-          Verdum
+          SeArys
         </Link>
 
         <nav className="hidden gap-8 font-body text-sm text-ink md:flex">
