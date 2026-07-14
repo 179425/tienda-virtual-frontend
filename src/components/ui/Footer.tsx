@@ -5,7 +5,7 @@ export function Footer() {
         <div>
           <p className="font-display text-xl">Verdum</p>
           <p className="mt-2 max-w-xs font-body text-sm text-moss50/80">
-            Plantas de interior y macetas artesanales, elegidas una por una.
+            
           </p>
         </div>
         <div className="font-body text-sm text-moss50/80">
@@ -15,11 +15,11 @@ export function Footer() {
         </div>
         <div className="font-body text-sm text-moss50/80">
           <p className="mb-2 font-medium text-paper">Cuidado básico</p>
-          <p>La mayoría de nuestras plantas prefieren luz indirecta y riego moderado.</p>
+         
         </div>
       </div>
       <div className="border-t border-paper/10 py-4 text-center font-mono text-xs text-moss50/60">
-        © {new Date().getFullYear()} Verdum
+        © {new Date().getFullYear()} 
       </div>
     </footer>
   );
