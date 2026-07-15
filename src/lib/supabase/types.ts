@@ -25,3 +25,12 @@ export type ProductoDB = {
   provider: string | null;
   has_iva: boolean | null;
 };
+
+// Fila de la tabla "anuncios" (banners de la home: imagen o video).
+export type Anuncio = {
+  id: number;
+  tipo: "imagen" | "video";
+  media_url: string;
+  link_url: string | null;
+  orden: number;
+};
