@@ -1,52 +1,24 @@
-import Image from "next/image";
 import { getProductos, getCategorias } from "@/features/catalogo/data";
 import { CatalogoCliente } from "@/features/catalogo/CatalogoCliente";
+import { getAnuncios } from "@/features/anuncios/data";
+import { AnunciosBanner } from "@/features/anuncios/AnunciosBanner";
 
 // El catálogo depende del inventario real en Supabase, así que se revalida
 // cada 60 segundos en vez de quedar fijo desde el build.
 export const revalidate = 60;
 
 export default async function Home() {
-  const [productos, categorias] = await Promise.all([getProductos(), getCategorias()]);
+  const [productos, categorias, anuncios] = await Promise.all([
+    getProductos(),
+    getCategorias(),
+    getAnuncios(),
+  ]);
 
   return (
     <div>
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-12 md:grid-cols-2 md:items-center md:pt-20">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-moss">
-            Aseo · Mercado · Mascotas
-          </p>
-          <h1 className="mt-4 font-display text-5xl leading-[1.05] text-forest md:text-6xl">
-            Todo lo de la casa, a un mensaje de distancia.
-          </h1>
-          <p className="mt-6 max-w-md font-body text-base leading-relaxed text-ink/70">
-            Aseo del hogar, cuidado personal, alimentos, bebidas, mecatos y productos
-            para mascotas. Arma tu pedido, escríbenos por WhatsApp y coordinamos la
-            entrega — sin vueltas.
-          </p>
-          <a
-            href="#catalogo"
-            className="mt-8 inline-flex rounded-full bg-forest px-6 py-3 font-body text-sm text-paper hover:bg-ink transition-colors"
-          >
-            Ver catálogo
-          </a>
-        </div>
-
-        <div className="torn-leaf-edge relative aspect-[4/5] overflow-hidden rounded-2xl bg-moss50 md:aspect-square">
-          <Image
-            src="https://images.unsplash.com/photo-1754380629457-b833f6bea68a?q=80&w=1000&auto=format&fit=crop"
-            alt="Rincón con plantas de interior sobre un mueble de madera"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-            priority
-          />
-        </div>
+      <section className="mx-auto max-w-6xl px-5 pt-8">
+        <AnunciosBanner anuncios={anuncios} />
       </section>
-
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="leaf-vein-divider" />
-      </div>
 
       <section id="catalogo" className="mx-auto max-w-6xl px-5 py-16">
         <div className="mb-8">
