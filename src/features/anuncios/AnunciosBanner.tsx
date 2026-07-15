@@ -48,7 +48,7 @@ export function AnunciosBanner({ anuncios }: { anuncios: Anuncio[] }) {
   if (anuncios.length === 0) {
     // Sin anuncios cargados: se deja el espacio marcado, igual que antes.
     return (
-      <div className="flex h-40 items-center justify-center rounded-2xl border-2 border-dashed border-moss/40 bg-moss50 md:h-52">
+      <div className="flex aspect-[3/1] max-h-[420px] items-center justify-center border-2 border-dashed border-moss/40 bg-moss50">
         <p className="font-mono text-xs uppercase tracking-wider text-moss">
           Espacio para anuncio / oferta destacada
         </p>
@@ -57,7 +57,7 @@ export function AnunciosBanner({ anuncios }: { anuncios: Anuncio[] }) {
   }
 
   return (
-    <div className="relative h-40 overflow-hidden rounded-2xl bg-moss50 md:h-52">
+    <div className="relative aspect-[3/1] max-h-[420px] overflow-hidden bg-moss50">
       {anuncios.map((anuncio, i) => (
         <div
           key={anuncio.id}
