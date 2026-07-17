@@ -48,14 +48,14 @@ export function CarritoCliente() {
 
   if (items.length === 0) {
     return (
-      <div className="rounded-2xl border border-dashed border-moss/40 py-20 text-center">
-        <p className="font-display text-2xl text-forest">Tu carrito está vacío</p>
-        <p className="mt-2 font-body text-sm text-ink/60">
+      <div className="rounded-2xl border border-dashed border-arena/40 py-20 text-center">
+        <p className="font-display text-2xl text-tomate">Tu carrito está vacío</p>
+        <p className="mt-2 font-body text-sm text-carbon/60">
           Explora el catálogo y agrega lo que necesitas.
         </p>
         <Link
           href="/"
-          className="mt-6 inline-flex rounded-full bg-forest px-6 py-3 font-body text-sm text-paper hover:bg-ink transition-colors"
+          className="mt-6 inline-flex rounded-full bg-tomate px-6 py-3 font-body text-sm text-papel hover:bg-carbon transition-colors"
         >
           Ver catálogo
         </Link>
@@ -69,9 +69,9 @@ export function CarritoCliente() {
         {items.map(({ producto, cantidad }) => (
           <li
             key={producto.id}
-            className="flex gap-4 rounded-2xl bg-white/60 p-4 ring-1 ring-moss/20"
+            className="flex gap-4 rounded-2xl bg-white/60 p-4 ring-1 ring-arena/20"
           >
-            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-moss50">
+            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-crema">
               <Image
                 src={producto.imagen}
                 alt={producto.nombre}
@@ -86,28 +86,28 @@ export function CarritoCliente() {
                 <div>
                   <Link
                     href={`/producto/${producto.slug}`}
-                    className="font-display text-lg text-forest hover:text-clay"
+                    className="font-display text-lg text-carbon hover:text-cereza"
                   >
                     {producto.nombre}
                   </Link>
-                  <p className="font-mono text-sm text-ink/60">
+                  <p className="font-mono text-sm text-carbon/60">
                     {formatearPrecio(producto.precio)}
                   </p>
                 </div>
                 <button
                   onClick={() => quitar(producto.id)}
                   aria-label={`Quitar ${producto.nombre} del carrito`}
-                  className="font-body text-xs text-clay hover:underline"
+                  className="font-body text-xs text-cereza hover:underline"
                 >
                   Quitar
                 </button>
               </div>
 
-              <div className="flex items-center rounded-full border border-moss/40 w-fit">
+              <div className="flex items-center rounded-full border border-arena/40 w-fit">
                 <button
                   aria-label="Reducir cantidad"
                   onClick={() => actualizarCantidad(producto.id, cantidad - 1)}
-                  className="px-3 py-1 font-body text-base text-forest hover:text-clay"
+                  className="px-3 py-1 font-body text-base text-cereza hover:text-carbon"
                 >
                   −
                 </button>
@@ -118,13 +118,13 @@ export function CarritoCliente() {
                     actualizarCantidad(producto.id, Math.min(producto.stock, cantidad + 1))
                   }
                   disabled={cantidad >= producto.stock}
-                  className="px-3 py-1 font-body text-base text-forest hover:text-clay disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:text-forest"
+                  className="px-3 py-1 font-body text-base text-cereza hover:text-carbon disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:text-cereza"
                 >
                   +
                 </button>
               </div>
               {cantidad >= producto.stock && (
-                <p className="mt-1 font-mono text-[11px] text-ink/40">
+                <p className="mt-1 font-mono text-[11px] text-carbon/40">
                   Máximo disponible: {producto.stock}
                 </p>
               )}
@@ -133,15 +133,15 @@ export function CarritoCliente() {
         ))}
       </ul>
 
-      <aside className="h-fit rounded-2xl bg-forest p-6 text-paper">
+      <aside className="h-fit rounded-2xl bg-tomate p-6 text-papel">
         <p className="font-display text-xl">Resumen</p>
-        <div className="mt-4 flex justify-between font-body text-sm text-moss50/80">
+        <div className="mt-4 flex justify-between font-body text-sm text-crema/80">
           <span>Total</span>
-          <span className="font-mono text-lg text-paper">
+          <span className="font-mono text-lg text-papel">
             {formatearPrecio(totalPrecio)}
           </span>
         </div>
-        <p className="mt-2 font-body text-xs text-moss50/60">
+        <p className="mt-2 font-body text-xs text-crema/60">
           El pago se coordina directamente por WhatsApp.
         </p>
         <Boton
@@ -153,7 +153,7 @@ export function CarritoCliente() {
           {enviando ? "Enviando..." : "Confirmar pedido por WhatsApp"}
         </Boton>
         {error && (
-          <p className="mt-3 font-body text-xs text-clay">{error}</p>
+          <p className="mt-3 font-body text-xs text-cereza">{error}</p>
         )}
       </aside>
     </div>

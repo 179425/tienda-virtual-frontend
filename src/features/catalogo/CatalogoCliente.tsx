@@ -37,7 +37,7 @@ export function CatalogoCliente({
             onChange={(e) => setBusqueda(e.target.value)}
             placeholder="Buscar productos..."
             aria-label="Buscar productos"
-            className="w-full rounded-full border border-moss/40 bg-white/70 px-5 py-3 font-body text-sm text-ink placeholder:text-ink/40 focus:border-gold"
+            className="w-full rounded-full border border-arena/40 bg-white/70 px-5 py-3 font-body text-sm text-carbon placeholder:text-carbon/40 focus:border-mandarina"
           />
         </div>
 
@@ -46,8 +46,8 @@ export function CatalogoCliente({
             onClick={() => setCategoria(null)}
             className={`rounded-full px-4 py-2 font-body text-xs tracking-wide transition-colors ${
               categoria === null
-                ? "bg-forest text-paper"
-                : "bg-white/60 text-ink/70 ring-1 ring-moss/30 hover:bg-moss50"
+                ? "bg-tomate text-papel"
+                : "bg-white/60 text-carbon/70 ring-1 ring-arena/30 hover:bg-crema"
             }`}
           >
             Todas
@@ -58,8 +58,8 @@ export function CatalogoCliente({
               onClick={() => setCategoria(c)}
               className={`rounded-full px-4 py-2 font-body text-xs tracking-wide transition-colors ${
                 categoria === c
-                  ? "bg-forest text-paper"
-                  : "bg-white/60 text-ink/70 ring-1 ring-moss/30 hover:bg-moss50"
+                  ? "bg-tomate text-papel"
+                  : "bg-white/60 text-carbon/70 ring-1 ring-arena/30 hover:bg-crema"
               }`}
             >
               {c}
@@ -68,7 +68,7 @@ export function CatalogoCliente({
         </div>
       </div>
 
-      <p className="mt-4 font-mono text-xs text-ink/50">
+      <p className="mt-4 font-mono text-xs text-carbon/50">
         {productosFiltrados.length}{" "}
         {productosFiltrados.length === 1 ? "producto" : "productos"}
       </p>

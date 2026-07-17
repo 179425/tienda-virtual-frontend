@@ -20,8 +20,8 @@ export default async function Home() {
 
       <section id="catalogo" className="mx-auto max-w-6xl px-5 py-16">
         <div className="mb-8">
-          <h2 className="font-display text-3xl text-forest">Catálogo</h2>
-          <p className="mt-1 font-body text-sm text-ink/60">
+          <h2 className="font-display text-3xl text-tomate">Catálogo</h2>
+          <p className="mt-1 font-body text-sm text-carbon/60">
             {productos.length} productos disponibles ahora mismo
           </p>
         </div>
@@ -29,24 +29,24 @@ export default async function Home() {
       </section>
 
       <section id="nosotros" className="mx-auto max-w-6xl px-5 pb-20">
-        <div className="rounded-2xl bg-moss50 p-8 md:p-12">
-          <h2 className="font-display text-2xl text-forest">¿Por qué comprar en SeArys?</h2>
+        <div className="rounded-2xl bg-crema p-8 md:p-12">
+          <h2 className="font-display text-2xl text-tomate">¿Por qué comprar en SeArys?</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
             <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-moss">Precios</p>
-              <p className="mt-1 font-body text-sm text-ink/70">
+              <p className="font-mono text-xs uppercase tracking-wider text-arena">Precios</p>
+              <p className="mt-1 font-body text-sm text-carbon/70">
                 Precios de barrio, claros y sin sorpresas al momento de pagar.
               </p>
             </div>
             <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-moss">Variedad</p>
-              <p className="mt-1 font-body text-sm text-ink/70">
+              <p className="font-mono text-xs uppercase tracking-wider text-arena">Variedad</p>
+              <p className="mt-1 font-body text-sm text-carbon/70">
                 Aseo, alimentos, bebidas, mecatos y mascotas en un solo pedido.
               </p>
             </div>
             <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-moss">Entrega</p>
-              <p className="mt-1 font-body text-sm text-ink/70">
+              <p className="font-mono text-xs uppercase tracking-wider text-arena">Entrega</p>
+              <p className="mt-1 font-body text-sm text-carbon/70">
                 Cada pedido se confirma por WhatsApp antes de despachar.
               </p>
             </div>

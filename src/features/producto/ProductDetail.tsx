@@ -21,7 +21,7 @@ export function ProductDetail({ producto }: { producto: Producto }) {
 
   return (
     <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-      <div className="torn-leaf-edge relative aspect-[4/5] overflow-hidden rounded-2xl bg-moss50">
+      <div className="torn-leaf-edge relative aspect-[4/5] overflow-hidden rounded-2xl bg-crema">
         <Image
           src={producto.imagen}
           alt={producto.nombre}
@@ -33,28 +33,28 @@ export function ProductDetail({ producto }: { producto: Producto }) {
       </div>
 
       <div className="flex flex-col">
-        <Link href="/" className="font-body text-sm text-moss hover:text-clay">
+        <Link href="/" className="font-body text-sm text-arena hover:text-cereza">
           ← Volver al catálogo
         </Link>
 
-        <p className="mt-6 font-mono text-xs uppercase tracking-wider text-moss">
+        <p className="mt-6 font-mono text-xs uppercase tracking-wider text-arena">
           {producto.categoria}
         </p>
-        <h1 className="mt-2 font-display text-4xl text-forest">{producto.nombre}</h1>
-        <p className="mt-4 font-mono text-2xl text-forest">
+        <h1 className="mt-2 font-display text-4xl text-tomate">{producto.nombre}</h1>
+        <p className="mt-4 font-mono text-2xl text-tomate">
           {formatearPrecio(producto.precio)}
         </p>
 
-        <p className="mt-6 font-body text-base leading-relaxed text-ink/80">
+        <p className="mt-6 font-body text-base leading-relaxed text-carbon/80">
           {producto.descripcion}
         </p>
 
         <div className="mt-8 flex items-center gap-4">
-          <div className="flex items-center rounded-full border border-moss/40">
+          <div className="flex items-center rounded-full border border-arena/40">
             <button
               aria-label="Reducir cantidad"
               onClick={() => setCantidad((c) => Math.max(1, c - 1))}
-              className="px-4 py-2 font-body text-lg text-forest hover:text-clay"
+              className="px-4 py-2 font-body text-lg text-cereza hover:text-carbon"
             >
               −
             </button>
@@ -62,7 +62,7 @@ export function ProductDetail({ producto }: { producto: Producto }) {
             <button
               aria-label="Aumentar cantidad"
               onClick={() => setCantidad((c) => Math.min(producto.stock, c + 1))}
-              className="px-4 py-2 font-body text-lg text-forest hover:text-clay"
+              className="px-4 py-2 font-body text-lg text-cereza hover:text-carbon"
             >
               +
             </button>
@@ -74,9 +74,9 @@ export function ProductDetail({ producto }: { producto: Producto }) {
         </div>
 
         {producto.stock === 0 ? (
-          <p className="mt-3 font-body text-sm text-clay">Sin stock por ahora.</p>
+          <p className="mt-3 font-body text-sm text-cereza">Sin stock por ahora.</p>
         ) : (
-          <p className="mt-3 font-body text-sm text-ink/50">
+          <p className="mt-3 font-body text-sm text-carbon/50">
             {producto.stock} disponibles
           </p>
         )}

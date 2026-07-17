@@ -13,17 +13,17 @@ export function Header() {
   useEffect(() => setMontado(true), []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-moss/30 bg-paper/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-arena/30 bg-papel/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link href="/" className="font-display text-2xl font-medium tracking-tight text-forest">
+        <Link href="/" className="font-display text-2xl font-medium tracking-tight text-tomate">
           SeArys
         </Link>
 
-        <nav className="hidden gap-8 font-body text-sm text-ink md:flex">
-          <Link href="/" className="hover:text-clay transition-colors">
+        <nav className="hidden gap-8 font-body text-sm text-carbon md:flex">
+          <Link href="/" className="hover:text-cereza transition-colors">
             Catálogo
           </Link>
-          <Link href="/#nosotros" className="hover:text-clay transition-colors">
+          <Link href="/#nosotros" className="hover:text-cereza transition-colors">
             Domicilios
           </Link>
         </nav>
@@ -31,7 +31,7 @@ export function Header() {
         <Link
           href="/carrito"
           aria-label="Ver carrito de compras"
-          className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-moss text-forest hover:bg-moss50 transition-colors"
+          className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-arena text-cereza hover:bg-crema transition-colors"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
@@ -45,7 +45,7 @@ export function Header() {
             <circle cx="17" cy="21" r="1.4" fill="currentColor" />
           </svg>
           {montado && totalItems > 0 && (
-            <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-gold text-[11px] font-semibold text-forest">
+            <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-mandarina text-[11px] font-semibold text-carbon">
               {totalItems}
             </span>
           )}

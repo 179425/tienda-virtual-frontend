@@ -18,31 +18,29 @@
 }
 
 body {
-  background-color: #EEF2E8;
-  color: #1F3A2E;
+  background-color: #FFF8F1;
+  color: #241A14;
 }
 
 *:focus-visible {
-  outline: 3px solid #E3A23C;
+  outline: 3px solid #F5871F;
   outline-offset: 2px;
   border-radius: 2px;
 }
 
-/* Elemento firma: borde superior "hoja rasgada" en tarjetas de producto */
+/* Elemento firma: muesca de "etiqueta de precio" en tarjetas de producto,
+   en vez del borde de hoja rasgada — evoca el ticket/rótulo de tienda de barrio */
 .torn-leaf-edge {
   clip-path: polygon(
-    0% 6%, 5% 2%, 10% 7%, 16% 1%, 22% 6%, 28% 2%, 34% 7%,
-    40% 1%, 46% 6%, 52% 2%, 58% 7%, 64% 1%, 70% 6%, 76% 2%,
-    82% 7%, 88% 1%, 94% 6%, 100% 2%,
-    100% 100%, 0% 100%
+    0% 100%, 0% 4%, 6% 0%, 94% 0%, 100% 4%, 100% 100%
   );
 }
 
-/* Divisor tipo "nervadura de hoja" entre secciones */
+/* Divisor a dos tonos (tomate → mandarina) entre secciones */
 .leaf-vein-divider {
   position: relative;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #7C9473 20%, #7C9473 80%, transparent);
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #D93A2A 20%, #F5871F 80%, transparent);
 }
 
 .leaf-vein-divider::before {
@@ -52,9 +50,9 @@ body {
   top: -4px;
   width: 10px;
   height: 10px;
-  background: #E3A23C;
-  border-radius: 0 60% 0 60%;
-  transform: translateX(-50%) rotate(45deg);
+  background: #F5871F;
+  border-radius: 50%;
+  transform: translateX(-50%);
 }
 
 .line-clamp-2 {

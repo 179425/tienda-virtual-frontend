@@ -48,8 +48,8 @@ export function AnunciosBanner({ anuncios }: { anuncios: Anuncio[] }) {
   if (anuncios.length === 0) {
     // Sin anuncios cargados: se deja el espacio marcado, igual que antes.
     return (
-      <div className="flex aspect-[3/1] max-h-[420px] w-full items-center justify-center border-2 border-dashed border-moss/40 bg-moss50">
-        <p className="font-mono text-xs uppercase tracking-wider text-moss">
+      <div className="flex aspect-[3/1] max-h-[420px] w-full items-center justify-center border-2 border-dashed border-arena/40 bg-crema">
+        <p className="font-mono text-xs uppercase tracking-wider text-arena">
           Espacio para anuncio / oferta destacada
         </p>
       </div>
@@ -57,7 +57,7 @@ export function AnunciosBanner({ anuncios }: { anuncios: Anuncio[] }) {
   }
 
   return (
-    <div className="relative aspect-[3/1] max-h-[420px] w-full overflow-hidden bg-moss50">
+    <div className="relative aspect-[3/1] max-h-[420px] w-full overflow-hidden bg-crema">
       {anuncios.map((anuncio, i) => (
         <div
           key={anuncio.id}
@@ -76,7 +76,7 @@ export function AnunciosBanner({ anuncios }: { anuncios: Anuncio[] }) {
               onClick={() => setActivo(i)}
               aria-label={`Ver anuncio ${i + 1}`}
               className={`h-1.5 w-1.5 rounded-full transition-all ${
-                i === activo ? "w-4 bg-paper" : "bg-paper/50"
+                i === activo ? "w-4 bg-papel" : "bg-papel/50"
               }`}
             />
           ))}

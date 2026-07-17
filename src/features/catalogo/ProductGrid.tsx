@@ -4,9 +4,9 @@ import { ProductCard } from "./ProductCard";
 export function ProductGrid({ productos }: { productos: Producto[] }) {
   if (productos.length === 0) {
     return (
-      <div className="rounded-2xl border border-dashed border-moss/40 py-16 text-center">
-        <p className="font-display text-xl text-forest">No encontramos nada por acá</p>
-        <p className="mt-2 font-body text-sm text-ink/60">
+      <div className="rounded-2xl border border-dashed border-arena/40 py-16 text-center">
+        <p className="font-display text-xl text-carbon">No encontramos nada por acá</p>
+        <p className="mt-2 font-body text-sm text-carbon/60">
           Prueba con otra palabra o revisa el catálogo completo.
         </p>
       </div>
