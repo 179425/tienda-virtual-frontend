@@ -18,7 +18,7 @@
 }
 
 body {
-  background-color: #FFF8F1;
+  background-color: #FFFFFF;
   color: #241A14;
 }
 
@@ -40,7 +40,7 @@ body {
 .leaf-vein-divider {
   position: relative;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #D93A2A 20%, #F5871F 80%, transparent);
+  background: linear-gradient(90deg, transparent, #CC3624 20%, #F5871F 80%, transparent);
 }
 
 .leaf-vein-divider::before {

@@ -13,17 +13,17 @@ export function Header() {
   useEffect(() => setMontado(true), []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-arena/30 bg-papel/90 backdrop-blur">
+    <header className="sticky top-0 z-40 bg-coral shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link href="/" className="font-display text-2xl font-medium tracking-tight text-tomate">
+        <Link href="/" className="font-display text-2xl font-semibold tracking-tight text-carbon">
           SeArys
         </Link>
 
-        <nav className="hidden gap-8 font-body text-sm text-carbon md:flex">
-          <Link href="/" className="hover:text-cereza transition-colors">
+        <nav className="hidden gap-8 font-body text-sm font-medium text-carbon md:flex">
+          <Link href="/" className="hover:underline underline-offset-4">
             Catálogo
           </Link>
-          <Link href="/#nosotros" className="hover:text-cereza transition-colors">
+          <Link href="/#nosotros" className="hover:underline underline-offset-4">
             Domicilios
           </Link>
         </nav>
@@ -31,7 +31,7 @@ export function Header() {
         <Link
           href="/carrito"
           aria-label="Ver carrito de compras"
-          className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-arena text-cereza hover:bg-crema transition-colors"
+          className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-carbon/20 text-carbon hover:bg-white/30 transition-colors"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
