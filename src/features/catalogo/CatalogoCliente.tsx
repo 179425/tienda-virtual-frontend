@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Producto } from "@/lib/supabase/types";
 import { ProductGrid } from "./ProductGrid";
 
@@ -11,8 +12,15 @@ export function CatalogoCliente({
   productos: Producto[];
   categorias: string[];
 }) {
-  const [busqueda, setBusqueda] = useState("");
+  const searchParams = useSearchParams();
+  const [busqueda, setBusqueda] = useState(searchParams.get("buscar") ?? "");
   const [categoria, setCategoria] = useState<string | null>(null);
+
+  // El buscador vive en el encabezado (visible en toda la tienda) y manda
+  // el texto por la URL (?buscar=...). Aquí lo sincronizamos con el filtro local.
+  useEffect(() => {
+    setBusqueda(searchParams.get("buscar") ?? "");
+  }, [searchParams]);
 
   const productosFiltrados = useMemo(() => {
     const q = busqueda.trim().toLowerCase();
@@ -29,18 +37,7 @@ export function CatalogoCliente({
 
   return (
     <div>
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="relative w-full sm:max-w-xs">
-          <input
-            type="search"
-            value={busqueda}
-            onChange={(e) => setBusqueda(e.target.value)}
-            placeholder="Buscar productos..."
-            aria-label="Buscar productos"
-            className="w-full rounded-full border border-arena/40 bg-white/70 px-5 py-3 font-body text-sm text-carbon placeholder:text-carbon/40 focus:border-mandarina"
-          />
-        </div>
-
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setCategoria(null)}

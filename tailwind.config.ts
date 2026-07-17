@@ -12,7 +12,6 @@ const config: Config = {
         cereza: "#B92A1C",
         arena: "#8C7566",
         crema: "#F5E8DA",
-        coral: "#FF5A45",
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "serif"],

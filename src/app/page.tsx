@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { getProductos, getCategorias } from "@/features/catalogo/data";
 import { CatalogoCliente } from "@/features/catalogo/CatalogoCliente";
 import { getAnuncios } from "@/features/anuncios/data";
@@ -25,7 +26,9 @@ export default async function Home() {
             {productos.length} productos disponibles ahora mismo
           </p>
         </div>
-        <CatalogoCliente productos={productos} categorias={categorias} />
+        <Suspense fallback={null}>
+          <CatalogoCliente productos={productos} categorias={categorias} />
+        </Suspense>
       </section>
 
       <section id="nosotros" className="mx-auto max-w-6xl px-5 pb-20">
