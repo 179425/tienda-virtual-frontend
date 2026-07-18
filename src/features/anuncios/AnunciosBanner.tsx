@@ -1,7 +1,10 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Anuncio } from "@/lib/supabase/types";
+import { obtenerImagenCategoria } from "@/features/categorias/imagenes";
 
 const SEGUNDOS_POR_SLIDE = 5000;
 
@@ -34,7 +37,46 @@ function Slide({ anuncio }: { anuncio: Anuncio }) {
   );
 }
 
-export function AnunciosBanner({ anuncios }: { anuncios: Anuncio[] }) {
+// Carrusel de círculos de categoría, anclado al pie del banner (por dentro,
+// sin salirse). Cada círculo enlaza al catálogo ya filtrado por esa categoría.
+function CategoriasEnBanner({ categorias }: { categorias: string[] }) {
+  if (categorias.length === 0) return null;
+
+  return (
+    <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center pb-3 pt-6">
+      <div className="flex max-w-full gap-3 overflow-x-auto px-5 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        {categorias.map((c) => (
+          <Link
+            key={c}
+            href={`/?categoria=${encodeURIComponent(c)}#catalogo`}
+            className="flex shrink-0 flex-col items-center gap-1"
+          >
+            <span className="relative block h-12 w-12 overflow-hidden rounded-full border-2 border-papel bg-crema shadow-sm">
+              <Image
+                src={obtenerImagenCategoria(c)}
+                alt=""
+                fill
+                sizes="48px"
+                className="object-cover"
+              />
+            </span>
+            <span className="rounded-full bg-carbon/40 px-1.5 py-0.5 font-body text-[10px] leading-none text-papel">
+              {c}
+            </span>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function AnunciosBanner({
+  anuncios,
+  categorias,
+}: {
+  anuncios: Anuncio[];
+  categorias: string[];
+}) {
   const [activo, setActivo] = useState(0);
 
   useEffect(() => {
@@ -46,18 +88,20 @@ export function AnunciosBanner({ anuncios }: { anuncios: Anuncio[] }) {
   }, [anuncios.length]);
 
   if (anuncios.length === 0) {
-    // Sin anuncios cargados: se deja el espacio marcado, igual que antes.
+    // Sin anuncios cargados: se deja el espacio marcado, igual que antes,
+    // pero las categorías igual aparecen al pie.
     return (
-      <div className="flex aspect-[3/1] max-h-[420px] w-full items-center justify-center border-2 border-dashed border-arena/40 bg-crema">
-        <p className="font-mono text-xs uppercase tracking-wider text-arena">
+      <div className="relative aspect-[16/7] max-h-[280px] min-h-[180px] w-full border-2 border-dashed border-arena/40 bg-crema">
+        <p className="flex h-full items-center justify-center pb-14 font-mono text-xs uppercase tracking-wider text-arena">
           Espacio para anuncio / oferta destacada
         </p>
+        <CategoriasEnBanner categorias={categorias} />
       </div>
     );
   }
 
   return (
-    <div className="relative aspect-[3/1] max-h-[420px] w-full overflow-hidden bg-crema">
+    <div className="relative aspect-[16/7] max-h-[280px] min-h-[180px] w-full overflow-hidden bg-crema">
       {anuncios.map((anuncio, i) => (
         <div
           key={anuncio.id}
@@ -69,7 +113,7 @@ export function AnunciosBanner({ anuncios }: { anuncios: Anuncio[] }) {
       ))}
 
       {anuncios.length > 1 && (
-        <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+        <div className="absolute left-1/2 top-3 z-10 flex -translate-x-1/2 gap-2">
           {anuncios.map((anuncio, i) => (
             <button
               key={anuncio.id}
@@ -82,6 +126,8 @@ export function AnunciosBanner({ anuncios }: { anuncios: Anuncio[] }) {
           ))}
         </div>
       )}
+
+      <CategoriasEnBanner categorias={categorias} />
     </div>
   );
 }

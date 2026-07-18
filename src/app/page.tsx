@@ -17,7 +17,7 @@ export default async function Home() {
 
   return (
     <div>
-      <AnunciosBanner anuncios={anuncios} />
+      <AnunciosBanner anuncios={anuncios} categorias={categorias} />
 
       <section id="catalogo" className="mx-auto max-w-6xl px-5 py-16">
         <div className="mb-8">

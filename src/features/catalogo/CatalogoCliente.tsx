@@ -14,12 +14,18 @@ export function CatalogoCliente({
 }) {
   const searchParams = useSearchParams();
   const [busqueda, setBusqueda] = useState(searchParams.get("buscar") ?? "");
-  const [categoria, setCategoria] = useState<string | null>(null);
+  const [categoria, setCategoria] = useState<string | null>(searchParams.get("categoria"));
 
   // El buscador vive en el encabezado (visible en toda la tienda) y manda
   // el texto por la URL (?buscar=...). Aquí lo sincronizamos con el filtro local.
   useEffect(() => {
     setBusqueda(searchParams.get("buscar") ?? "");
+  }, [searchParams]);
+
+  // Los círculos de categoría del banner enlazan con ?categoria=..., así que
+  // al llegar (o volver) con ese parámetro en la URL, el filtro se aplica solo.
+  useEffect(() => {
+    setCategoria(searchParams.get("categoria"));
   }, [searchParams]);
 
   const productosFiltrados = useMemo(() => {
