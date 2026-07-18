@@ -17,6 +17,7 @@ const IMAGENES_POR_CATEGORIA: Record<string, string> = {
   // "Alimentos": "/categorias/alimentos.jpg",
   // "Mascotas": "/categorias/mascotas.jpg",
   // "Bebidas": "/categorias/bebidas.jpg",
+  "Otros": "https://res.cloudinary.com/dgjsxjxmm/image/upload/f_auto,q_auto/v1769892067/searys-store/products/xrfnlgjywaaczcssjhu3.png",
 };
 
 export function obtenerImagenCategoria(nombre: string): string {
