@@ -5,7 +5,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        papel: "#ff0000",
+        papel: "#ffffff",
         carbon: "#241A14",
         tomate: "#ff0000",
         mandarina: "#F5871F",
