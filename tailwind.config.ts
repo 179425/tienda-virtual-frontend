@@ -8,7 +8,7 @@ const config: Config = {
         papel: "#ffffff",
         carbon: "#241A14",
         tomate: "#ff0000",
-        mandarina: "#F5871F",
+        mandarina: "#57f51f",
         cereza: "#B92A1C",
         arena: "#8C7566",
         crema: "#F5E8DA",
