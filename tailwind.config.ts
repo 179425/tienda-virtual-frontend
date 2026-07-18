@@ -7,7 +7,7 @@ const config: Config = {
       colors: {
         papel: "#ffffff",
         carbon: "#241A14",
-        tomate: "#ff0000",
+        tomate: "#ffc3fd",
         mandarina: "#57f51f",
         cereza: "#B92A1C",
         arena: "#8C7566",
