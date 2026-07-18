@@ -38,13 +38,28 @@ function Slide({ anuncio }: { anuncio: Anuncio }) {
 }
 
 // Carrusel de círculos de categoría, anclado al pie del banner (por dentro,
-// sin salirse). Cada círculo enlaza al catálogo ya filtrado por esa categoría.
+// sin salirse). El primero ("Todas") quita cualquier filtro; los demás
+// enlazan al catálogo ya filtrado por esa categoría.
 function CategoriasEnBanner({ categorias }: { categorias: string[] }) {
   if (categorias.length === 0) return null;
 
   return (
     <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center pb-3 pt-6">
       <div className="flex max-w-full gap-3 overflow-x-auto px-5 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        <Link href="/#catalogo" className="flex shrink-0 flex-col items-center gap-1">
+          <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border-2 border-papel bg-tomate text-papel shadow-sm">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1.5" fill="currentColor" />
+              <rect x="14" y="3" width="7" height="7" rx="1.5" fill="currentColor" />
+              <rect x="3" y="14" width="7" height="7" rx="1.5" fill="currentColor" />
+              <rect x="14" y="14" width="7" height="7" rx="1.5" fill="currentColor" />
+            </svg>
+          </span>
+          <span className="rounded-full bg-carbon/40 px-1.5 py-0.5 font-body text-[10px] leading-none text-papel">
+            Todas
+          </span>
+        </Link>
+
         {categorias.map((c) => (
           <Link
             key={c}
