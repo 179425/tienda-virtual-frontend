@@ -13,7 +13,7 @@
 const IMAGEN_RESERVA = "/placeholder-producto.svg";
 
 const IMAGENES_POR_CATEGORIA: Record<string, string> = {
-  // "Aseo": "/categorias/aseo.jpg",
+  "Aseo": "https://res.cloudinary.com/dgjsxjxmm/image/upload/f_auto,q_auto/v1769892067/searys-store/products/xrfnlgjywaaczcssjhu3.png",
   // "Alimentos": "/categorias/alimentos.jpg",
   // "Mascotas": "/categorias/mascotas.jpg",
   // "Bebidas": "/categorias/bebidas.jpg",
