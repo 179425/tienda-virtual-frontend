@@ -19,13 +19,7 @@ export default async function Home() {
     <div>
       <AnunciosBanner anuncios={anuncios} categorias={categorias} />
 
-      <section id="catalogo" className="mx-auto max-w-6xl px-5 py-16">
-        <div className="mb-8">
-          <h2 className="font-display text-3xl text-tomate">Catálogo</h2>
-          <p className="mt-1 font-body text-sm text-carbon/60">
-            {productos.length} productos disponibles ahora mismo
-          </p>
-        </div>
+      <section id="catalogo" className="mx-auto max-w-6xl px-5 py-10">
         <Suspense fallback={null}>
           <CatalogoCliente productos={productos} categorias={categorias} />
         </Suspense>
