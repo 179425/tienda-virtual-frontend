@@ -43,42 +43,7 @@ export function CatalogoCliente({
 
   return (
     <div>
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex flex-wrap gap-2">
-          <button
-            onClick={() => setCategoria(null)}
-            className={`rounded-full px-4 py-2 font-body text-xs tracking-wide transition-colors ${
-              categoria === null
-                ? "bg-tomate text-papel"
-                : "bg-white/60 text-carbon/70 ring-1 ring-arena/30 hover:bg-crema"
-            }`}
-          >
-            Todas
-          </button>
-          {categorias.map((c) => (
-            <button
-              key={c}
-              onClick={() => setCategoria(c)}
-              className={`rounded-full px-4 py-2 font-body text-xs tracking-wide transition-colors ${
-                categoria === c
-                  ? "bg-tomate text-papel"
-                  : "bg-white/60 text-carbon/70 ring-1 ring-arena/30 hover:bg-crema"
-              }`}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <p className="mt-4 font-mono text-xs text-carbon/50">
-        {productosFiltrados.length}{" "}
-        {productosFiltrados.length === 1 ? "producto" : "productos"}
-      </p>
-
-      <div className="mt-6">
-        <ProductGrid productos={productosFiltrados} />
-      </div>
+      <ProductGrid productos={productosFiltrados} />
     </div>
   );
 }
