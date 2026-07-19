@@ -10,7 +10,7 @@ const config: Config = {
 
         // Footer y la tarjeta de "Resumen" del carrito (fondo oscuro),
         // además de texto oscuro general en varias partes de la tienda.
-        carbon: "#241A14",
+        carbon: "#c9b9af",
 
         // SOLO el encabezado (Header) de arriba, el botón primario
         // ("Agregar al carrito", "Ver catálogo") y el círculo "Todas"
