@@ -20,21 +20,23 @@ export function ProductDetail({ producto }: { producto: Producto }) {
   }
 
   return (
-    <div>
-      {/* Imagen a todo el ancho de la pantalla, como en apps de compras tipo Temu/Shein */}
-      <div className="relative h-[45vh] min-h-[320px] w-full overflow-hidden bg-crema md:h-[55vh]">
+    // Móvil: imagen a todo el ancho arriba, info debajo (estilo Temu/Shein).
+    // Escritorio (md+): vuelve a dos columnas contenidas, con la imagen en su
+    // proporción normal, para que no se vea estirada en pantallas anchas.
+    <div className="md:mx-auto md:max-w-6xl md:grid md:grid-cols-2 md:gap-16 md:px-5 md:py-12">
+      <div className="relative h-[45vh] min-h-[320px] w-full overflow-hidden bg-crema md:h-auto md:aspect-[4/5] md:rounded-2xl">
         <Image
           src={producto.imagen}
           alt={producto.nombre}
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
           priority
         />
         <Link
           href="/"
           aria-label="Volver al catálogo"
-          className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-papel/90 text-carbon shadow-sm backdrop-blur hover:bg-papel"
+          className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-papel/90 text-carbon shadow-sm backdrop-blur hover:bg-papel md:hidden"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
@@ -48,8 +50,15 @@ export function ProductDetail({ producto }: { producto: Producto }) {
         </Link>
       </div>
 
-      {/* Información del producto, debajo de la imagen */}
-      <div className="mx-auto max-w-3xl px-5 py-8">
+      {/* Información del producto: debajo de la imagen en móvil, al lado en escritorio */}
+      <div className="mx-auto max-w-3xl px-5 py-8 md:mx-0 md:max-w-none md:px-0 md:py-0 md:flex md:flex-col md:justify-center">
+        <Link
+          href="/"
+          className="hidden font-body text-sm text-arena hover:text-cereza md:mb-6 md:inline-block"
+        >
+          ← Volver al catálogo
+        </Link>
+
         <p className="font-mono text-xs uppercase tracking-wider text-arena">
           {producto.categoria}
         </p>
