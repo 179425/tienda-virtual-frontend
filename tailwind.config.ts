@@ -6,7 +6,7 @@ const config: Config = {
     extend: {
       colors: {
         // Texto claro sobre fondos oscuros o de color (botones, header, footer).
-        papel: "#d43cff",
+        papel: "#ffffff",
 
         // Footer y la tarjeta de "Resumen" del carrito (fondo oscuro),
         // además de texto oscuro general en varias partes de la tienda.
