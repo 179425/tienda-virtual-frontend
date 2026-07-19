@@ -16,7 +16,7 @@ const config: Config = {
         // ("Agregar al carrito", "Ver catálogo") y el círculo "Todas"
         // del carrusel de categorías. Cambiar esto NO afecta subtítulos
         // ni la tarjeta de resumen del carrito.
-        tomate: "#ffc3fd",
+        tomate: "#d749ff",
 
         // Botón secundario: "Confirmar pedido por WhatsApp".
         mandarina: "#57f51f",
