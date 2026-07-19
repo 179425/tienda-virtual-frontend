@@ -27,7 +27,7 @@ export default async function Home() {
 
       <section id="nosotros" className="mx-auto max-w-6xl px-5 pb-20">
         <div className="rounded-2xl bg-crema p-8 md:p-12">
-          <h2 className="font-display text-2xl text-tomate">¿Por qué comprar en SeArys?</h2>
+          <h2 className="font-display text-2xl text-cereza">¿Por qué comprar en SeArys?</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
             <div>
               <p className="font-mono text-xs uppercase tracking-wider text-arena">Precios</p>

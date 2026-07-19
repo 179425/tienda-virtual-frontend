@@ -49,7 +49,7 @@ export function CarritoCliente() {
   if (items.length === 0) {
     return (
       <div className="rounded-2xl border border-dashed border-arena/40 py-20 text-center">
-        <p className="font-display text-2xl text-tomate">Tu carrito está vacío</p>
+        <p className="font-display text-2xl text-cereza">Tu carrito está vacío</p>
         <p className="mt-2 font-body text-sm text-carbon/60">
           Explora el catálogo y agrega lo que necesitas.
         </p>
@@ -133,7 +133,7 @@ export function CarritoCliente() {
         ))}
       </ul>
 
-      <aside className="h-fit rounded-2xl bg-tomate p-6 text-papel">
+      <aside className="h-fit rounded-2xl bg-carbon p-6 text-papel">
         <p className="font-display text-xl">Resumen</p>
         <div className="mt-4 flex justify-between font-body text-sm text-crema/80">
           <span>Total</span>

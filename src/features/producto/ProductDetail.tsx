@@ -62,10 +62,10 @@ export function ProductDetail({ producto }: { producto: Producto }) {
         <p className="font-mono text-xs uppercase tracking-wider text-arena">
           {producto.categoria}
         </p>
-        <h1 className="mt-2 font-display text-3xl text-tomate md:text-4xl">
+        <h1 className="mt-2 font-display text-3xl text-cereza md:text-4xl">
           {producto.nombre}
         </h1>
-        <p className="mt-3 font-mono text-2xl text-tomate">
+        <p className="mt-3 font-mono text-2xl text-cereza">
           {formatearPrecio(producto.precio)}
         </p>
 
