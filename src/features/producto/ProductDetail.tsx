@@ -24,7 +24,7 @@ export function ProductDetail({ producto }: { producto: Producto }) {
     // Escritorio (md+): vuelve a dos columnas contenidas, con la imagen en su
     // proporción normal, para que no se vea estirada en pantallas anchas.
     <div className="md:mx-auto md:max-w-6xl md:grid md:grid-cols-2 md:gap-16 md:px-5 md:py-12">
-      <div className="relative h-[45vh] min-h-[320px] w-full overflow-hidden bg-crema md:h-auto md:aspect-[4/5] md:rounded-2xl">
+      <div className="relative h-[45vh] min-h-[320px] w-full overflow-hidden bg-fondoSuave md:h-auto md:aspect-[4/5] md:rounded-2xl">
         <Image
           src={producto.imagen}
           alt={producto.nombre}
@@ -36,7 +36,7 @@ export function ProductDetail({ producto }: { producto: Producto }) {
         <Link
           href="/"
           aria-label="Volver al catálogo"
-          className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-papel/90 text-carbon shadow-sm backdrop-blur hover:bg-papel md:hidden"
+          className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-blanco/90 text-textoPrincipal shadow-sm backdrop-blur hover:bg-blanco md:hidden"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
@@ -54,31 +54,31 @@ export function ProductDetail({ producto }: { producto: Producto }) {
       <div className="mx-auto max-w-3xl px-5 py-8 md:mx-0 md:max-w-none md:px-0 md:py-0 md:flex md:flex-col md:justify-center">
         <Link
           href="/"
-          className="hidden font-body text-sm text-arena hover:text-cereza md:mb-6 md:inline-block"
+          className="hidden font-body text-sm text-textoEtiqueta hover:text-textoSubtitulo md:mb-6 md:inline-block"
         >
           ← Volver al catálogo
         </Link>
 
-        <p className="font-mono text-xs uppercase tracking-wider text-arena">
+        <p className="font-mono text-xs uppercase tracking-wider text-textoEtiqueta">
           {producto.categoria}
         </p>
-        <h1 className="mt-2 font-display text-3xl text-cereza md:text-4xl">
+        <h1 className="mt-2 font-display text-3xl text-textoSubtitulo md:text-4xl">
           {producto.nombre}
         </h1>
-        <p className="mt-3 font-mono text-2xl text-cereza">
+        <p className="mt-3 font-mono text-2xl text-textoSubtitulo">
           {formatearPrecio(producto.precio)}
         </p>
 
-        <p className="mt-6 font-body text-base leading-relaxed text-carbon/80">
+        <p className="mt-6 font-body text-base leading-relaxed text-textoPrincipal/80">
           {producto.descripcion}
         </p>
 
         <div className="mt-8 flex items-center gap-4">
-          <div className="flex items-center rounded-full border border-arena/40">
+          <div className="flex items-center rounded-full border border-bordeSuave/40">
             <button
               aria-label="Reducir cantidad"
               onClick={() => setCantidad((c) => Math.max(1, c - 1))}
-              className="px-4 py-2 font-body text-lg text-cereza hover:text-carbon"
+              className="px-4 py-2 font-body text-lg text-textoSubtitulo hover:text-textoPrincipal"
             >
               −
             </button>
@@ -86,7 +86,7 @@ export function ProductDetail({ producto }: { producto: Producto }) {
             <button
               aria-label="Aumentar cantidad"
               onClick={() => setCantidad((c) => Math.min(producto.stock, c + 1))}
-              className="px-4 py-2 font-body text-lg text-cereza hover:text-carbon"
+              className="px-4 py-2 font-body text-lg text-textoSubtitulo hover:text-textoPrincipal"
             >
               +
             </button>
@@ -98,9 +98,9 @@ export function ProductDetail({ producto }: { producto: Producto }) {
         </div>
 
         {producto.stock === 0 ? (
-          <p className="mt-3 font-body text-sm text-cereza">Sin stock por ahora.</p>
+          <p className="mt-3 font-body text-sm text-textoAlerta">Sin stock por ahora.</p>
         ) : (
-          <p className="mt-3 font-body text-sm text-carbon/50">
+          <p className="mt-3 font-body text-sm text-textoPrincipal/50">
             {producto.stock} disponibles
           </p>
         )}

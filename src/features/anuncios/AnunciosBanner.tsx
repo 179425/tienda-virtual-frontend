@@ -47,7 +47,7 @@ function CategoriasEnBanner({ categorias }: { categorias: string[] }) {
     <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center pb-3 pt-6">
       <div className="flex max-w-full gap-3 overflow-x-auto px-5 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         <Link href="/#catalogo" className="flex shrink-0 flex-col items-center gap-1">
-          <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border-2 border-papel bg-tomate text-papel shadow-sm">
+          <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border-2 border-blanco bg-botonPrimarioFondo text-botonPrimarioTexto shadow-sm">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <rect x="3" y="3" width="7" height="7" rx="1.5" fill="currentColor" />
               <rect x="14" y="3" width="7" height="7" rx="1.5" fill="currentColor" />
@@ -55,7 +55,7 @@ function CategoriasEnBanner({ categorias }: { categorias: string[] }) {
               <rect x="14" y="14" width="7" height="7" rx="1.5" fill="currentColor" />
             </svg>
           </span>
-          <span className="rounded-full bg-carbon/40 px-1.5 py-0.5 font-body text-[10px] leading-none text-papel">
+          <span className="rounded-full bg-textoPrincipal/40 px-1.5 py-0.5 font-body text-[10px] leading-none text-blanco">
             Todas
           </span>
         </Link>
@@ -66,7 +66,7 @@ function CategoriasEnBanner({ categorias }: { categorias: string[] }) {
             href={`/?categoria=${encodeURIComponent(c)}#catalogo`}
             className="flex shrink-0 flex-col items-center gap-1"
           >
-            <span className="relative block h-12 w-12 overflow-hidden rounded-full border-2 border-papel bg-crema shadow-sm">
+            <span className="relative block h-12 w-12 overflow-hidden rounded-full border-2 border-blanco bg-fondoSuave shadow-sm">
               <Image
                 src={obtenerImagenCategoria(c)}
                 alt=""
@@ -75,7 +75,7 @@ function CategoriasEnBanner({ categorias }: { categorias: string[] }) {
                 className="object-cover"
               />
             </span>
-            <span className="rounded-full bg-carbon/40 px-1.5 py-0.5 font-body text-[10px] leading-none text-papel">
+            <span className="rounded-full bg-textoPrincipal/40 px-1.5 py-0.5 font-body text-[10px] leading-none text-blanco">
               {c}
             </span>
           </Link>
@@ -106,8 +106,8 @@ export function AnunciosBanner({
     // Sin anuncios cargados: se deja el espacio marcado, igual que antes,
     // pero las categorías igual aparecen al pie.
     return (
-      <div className="relative aspect-[16/7] max-h-[280px] min-h-[180px] w-full border-2 border-dashed border-arena/40 bg-crema">
-        <p className="flex h-full items-center justify-center pb-14 font-mono text-xs uppercase tracking-wider text-arena">
+      <div className="relative aspect-[16/7] max-h-[280px] min-h-[180px] w-full border-2 border-dashed border-bordeSuave/40 bg-fondoSuave">
+        <p className="flex h-full items-center justify-center pb-14 font-mono text-xs uppercase tracking-wider text-textoEtiqueta">
           Espacio para anuncio / oferta destacada
         </p>
         <CategoriasEnBanner categorias={categorias} />
@@ -116,7 +116,7 @@ export function AnunciosBanner({
   }
 
   return (
-    <div className="relative aspect-[16/7] max-h-[280px] min-h-[180px] w-full overflow-hidden bg-crema">
+    <div className="relative aspect-[16/7] max-h-[280px] min-h-[180px] w-full overflow-hidden bg-fondoSuave">
       {anuncios.map((anuncio, i) => (
         <div
           key={anuncio.id}
@@ -135,7 +135,7 @@ export function AnunciosBanner({
               onClick={() => setActivo(i)}
               aria-label={`Ver anuncio ${i + 1}`}
               className={`h-1.5 w-1.5 rounded-full transition-all ${
-                i === activo ? "w-4 bg-papel" : "bg-papel/50"
+                i === activo ? "w-4 bg-blanco" : "bg-blanco/50"
               }`}
             />
           ))}

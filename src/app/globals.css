@@ -36,7 +36,7 @@ body {
   );
 }
 
-/* Divisor a dos tonos (tomate → mandarina) entre secciones */
+/* Divisor a dos tonos entre secciones (colores propios, fijos, no ligados a tailwind.config.ts) */
 .leaf-vein-divider {
   position: relative;
   height: 3px;

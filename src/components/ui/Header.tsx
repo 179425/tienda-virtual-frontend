@@ -22,9 +22,9 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-40 bg-tomate shadow-sm">
+    <header className="sticky top-0 z-40 bg-encabezadoFondo shadow-sm">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-5 py-4 md:flex-nowrap md:gap-6">
-        <Link href="/" className="font-display text-2xl font-semibold tracking-tight text-papel">
+        <Link href="/" className="font-display text-2xl font-semibold tracking-tight text-encabezadoTexto">
           SeArys
         </Link>
 
@@ -36,12 +36,12 @@ export function Header() {
               onChange={(e) => setBusqueda(e.target.value)}
               placeholder="Buscar productos, marcas y más..."
               aria-label="Buscar productos"
-              className="w-full rounded-full border-none bg-papel px-5 py-2.5 pr-12 font-body text-sm text-carbon placeholder:text-carbon/40 focus:outline-none focus:ring-2 focus:ring-carbon/20"
+              className="w-full rounded-full border-none bg-buscadorFondo px-5 py-2.5 pr-12 font-body text-sm text-buscadorTexto placeholder:text-buscadorTexto/40 focus:outline-none focus:ring-2 focus:ring-buscadorTexto/20"
             />
             <button
               type="submit"
               aria-label="Buscar"
-              className="absolute right-1.5 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-carbon/60 hover:text-carbon transition-colors"
+              className="absolute right-1.5 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-buscadorTexto/60 hover:text-buscadorTexto transition-colors"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
@@ -51,7 +51,7 @@ export function Header() {
           </div>
         </form>
 
-        <nav className="hidden gap-6 font-body text-sm font-medium text-papel md:flex">
+        <nav className="hidden gap-6 font-body text-sm font-medium text-encabezadoTexto md:flex">
           <Link href="/#nosotros" className="hover:underline underline-offset-4 whitespace-nowrap">
             Domicilios
           </Link>
@@ -60,7 +60,7 @@ export function Header() {
         <Link
           href="/carrito"
           aria-label="Ver carrito de compras"
-          className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-papel/30 text-papel hover:bg-white/10 transition-colors"
+          className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-encabezadoTexto/30 text-encabezadoTexto hover:bg-white/10 transition-colors"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
@@ -74,7 +74,7 @@ export function Header() {
             <circle cx="17" cy="21" r="1.4" fill="currentColor" />
           </svg>
           {montado && totalItems > 0 && (
-            <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-mandarina text-[11px] font-semibold text-carbon">
+            <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-notificacionFondo text-[11px] font-semibold text-notificacionTexto">
               {totalItems}
             </span>
           )}

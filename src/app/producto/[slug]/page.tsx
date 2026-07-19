@@ -35,7 +35,7 @@ export default async function ProductoPage({ params }: Props) {
       <ProductDetail producto={producto} />
 
       <section className="mx-auto max-w-6xl px-5 pb-20 pt-4">
-        <h2 className="mb-6 font-display text-2xl text-cereza">Sigue explorando</h2>
+        <h2 className="mb-6 font-display text-2xl text-textoSubtitulo">Sigue explorando</h2>
         <ProductGrid productos={otrosProductos} />
       </section>
     </div>

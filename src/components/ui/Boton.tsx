@@ -4,11 +4,11 @@ type Variante = "primario" | "secundario" | "ghost";
 
 const estilos: Record<Variante, string> = {
   primario:
-    "bg-tomate text-papel hover:bg-carbon transition-colors",
+    "bg-botonPrimarioFondo text-botonPrimarioTexto hover:bg-botonPrimarioFondoHover transition-colors",
   secundario:
-    "bg-mandarina text-carbon hover:brightness-95 transition-all",
+    "bg-botonSecundarioFondo text-botonSecundarioTexto hover:brightness-95 transition-all",
   ghost:
-    "bg-transparent text-cereza border border-arena hover:bg-crema transition-colors",
+    "bg-transparent text-botonTercerioTexto border border-bordeSuave hover:bg-fondoSuave transition-colors",
 };
 
 const base =

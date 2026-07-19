@@ -1,36 +1,85 @@
 import type { Config } from "tailwindcss";
 
+// Cada color tiene su propio nombre según DÓNDE se usa (no según el tono).
+// Aunque hoy varios compartan el mismo código hexadecimal, cambiar uno solo
+// afecta a ESE elemento — nunca se mueve a otro sitio por accidente.
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        // Texto claro sobre fondos oscuros o de color (botones, header, footer).
-        papel: "#ffffff",
+        // ===== BLANCO GENÉRICO =====
+        // Detalles decorativos puntuales: bordes de avatares, puntos del
+        // carrusel de anuncios, fondo del botón flotante "volver" en el producto.
+        blanco: "#ffffff",
 
-        // Footer y la tarjeta de "Resumen" del carrito (fondo oscuro),
-        // además de texto oscuro general en varias partes de la tienda.
-        carbon: "#241A14",
+        // ===== ENCABEZADO (Header, arriba de todo) =====
+        encabezadoFondo: "#ffc3fd", // Fondo de la barra superior
+        encabezadoTexto: "#ffffff", // Logo, menú y el ícono del carrito
 
-        // SOLO el encabezado (Header) de arriba, el botón primario
-        // ("Agregar al carrito", "Ver catálogo") y el círculo "Todas"
-        // del carrusel de categorías. Cambiar esto NO afecta subtítulos
-        // ni la tarjeta de resumen del carrito.
-        tomate: "#d749ff",
+        // ===== BUSCADOR (dentro del encabezado) =====
+        // Independiente del encabezado: el buscador siempre debe verse
+        // blanco/claro, sin importar qué color tenga el resto del header.
+        buscadorFondo: "#ffffff", // Fondo de la caja de búsqueda
+        buscadorTexto: "#241A14", // Texto que se escribe y el ícono de lupa
 
-        // Botón secundario: "Confirmar pedido por WhatsApp".
-        mandarina: "#57f51f",
+        // ===== BOTÓN PRIMARIO (Agregar al carrito, Ver catálogo) =====
+        botonPrimarioFondo: "#ffc3fd",
+        botonPrimarioFondoHover: "#241A14",
+        botonPrimarioTexto: "#ffffff",
 
-        // SOLO subtítulos: los H1/H2 de cada página (Tu carrito, Sigue
-        // explorando, ¿Por qué comprar en SeArys?), el nombre y precio
-        // en la página de producto, y el precio en las tarjetas del catálogo.
-        cereza: "#B92A1C",
+        // ===== BOTÓN SECUNDARIO (Confirmar pedido por WhatsApp) =====
+        botonSecundarioFondo: "#57f51f",
+        botonSecundarioTexto: "#241A14",
 
-        // Texto secundario/etiquetas pequeñas (categoría, "Volver al catálogo").
-        arena: "#8C7566",
+        // ===== BOTÓN TERCIARIO (contorno, ej. dentro del carrito) =====
+        botonTercerioTexto: "#B92A1C",
 
-        // Fondos suaves tipo beige (tarjetas y secciones claras).
-        crema: "#F5E8DA",
+        // ===== BURBUJA CONTADOR DEL CARRITO (sobre el ícono del header) =====
+        notificacionFondo: "#57f51f",
+        notificacionTexto: "#241A14",
+
+        // ===== PIE DE PÁGINA (Footer) =====
+        piePaginaFondo: "#241A14",
+        piePaginaTexto: "#F5E8DA",
+
+        // ===== TARJETA "RESUMEN" DEL CARRITO =====
+        // Independiente del Footer: aunque hoy se vean parecidos, son
+        // dos colores separados y se pueden cambiar por separado.
+        resumenCarritoFondo: "#241A14",
+        resumenCarritoTexto: "#ffffff",
+        resumenCarritoTextoSecundario: "#F5E8DA",
+
+        // ===== SUBTÍTULOS =====
+        // H1/H2 de cada página (Tu carrito, Sigue explorando, ¿Por qué
+        // comprar en SeArys?) y el nombre + precio del producto/tarjetas.
+        textoSubtitulo: "#B92A1C",
+
+        // ===== ETIQUETAS PEQUEÑAS =====
+        // Categoría, "Precios"/"Variedad"/"Entrega", "Volver al catálogo".
+        textoEtiqueta: "#8C7566",
+
+        // ===== TEXTO PRINCIPAL =====
+        // Párrafos y textos normales (descripciones, nombres de producto
+        // dentro de tarjetas, textos del carrito). Independiente del
+        // buscador y de los textos del footer/resumen.
+        textoPrincipal: "#241A14",
+
+        // ===== ALERTAS =====
+        // Mensajes de error, "sin stock" y "carrito vacío". Independiente
+        // de los subtítulos, aunque hoy compartan tono.
+        textoAlerta: "#B92A1C",
+
+        // ===== INSIGNIA SOBRE PRODUCTO (ej. oferta destacada) =====
+        insigniaOfertaFondo: "#B92A1C",
+
+        // ===== BORDES SUTILES =====
+        // Separadores y contornos suaves en tarjetas y botones.
+        bordeSuave: "#8C7566",
+
+        // ===== FONDOS NEUTROS =====
+        // Placeholders de imagen, banner de anuncios, tarjetas claras.
+        fondoSuave: "#F5E8DA",
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "serif"],
