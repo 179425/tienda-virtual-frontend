@@ -14,7 +14,7 @@ const config: Config = {
         blanco: "#ffffff",
 
         // ===== ENCABEZADO (Header, arriba de todo) =====
-        encabezadoFondo: "#6086d9", // Fondo de la barra superior
+        encabezadoFondo: "#d960d1", // Fondo de la barra superior
         encabezadoTexto: "#ffffff", // Logo, menú y el ícono del carrito
 
         // ===== BUSCADOR (dentro del encabezado) =====
